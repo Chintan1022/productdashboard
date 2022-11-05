@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-8">
+        <div class="row">
+          <div class="col mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="e-profile">
+                  <div class="row">
+                    <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                      <div class="text-center text-sm-left mb-2 mb-sm-0">
+                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Edit User Details</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content pt-3">
+                    <div class="tab-pane active">
+                      <form class="form" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                          <div class="col">
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Name</label>
+                                  <input class="form-control" type="text" name="name" formControlName="name"
+                                    [ngClass]="{'is-invalid':submitted && formControl.name.errors}">
+                                  <div *ngIf="submitted && formControl.name.errors" class="text-danger">
+                                    <div *ngIf="formControl.name.errors.pattern">* Enter valid Name.</div>
+                                    <div *ngIf="formControl.name.errors.required">* Name is required.</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+  
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Email</label>
+                                  <input class="form-control" type="text" formControlName="email"
+                                    [ngClass]="{'is-invalid':submitted && formControl.email.errors}">
+                                  <div *ngIf="submitted && formControl.email.errors" class="text-danger">
+                                    <div *ngIf="formControl.email.errors.email">* Email must be valid.</div>
+                                    <div *ngIf="formControl.email.errors.required">* Email is required.</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>phoneno</label>
+                                  <input class="form-control" type="text" formControlName="phoneno"
+                                    [ngClass]="{'is-invalid':submitted && formControl.phoneno.errors}">
+                                  <div *ngIf="submitted && formControl.phoneno.errors" class="text-danger">
+                                    <div *ngIf="formControl.phoneno.errors.maxlength">* Enter valid phone no.</div>
+                                    <div *ngIf="formControl.phoneno.errors.required">* phone no is required.</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+                          <div class="col d-flex justify-content-end">
+                            <button class="btn btn-success" type="submit">submit</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

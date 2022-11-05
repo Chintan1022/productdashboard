@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-8">
+        <div class="row">
+          <div class="col mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="e-profile">
+                  <div class="row">
+                    <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                      <div class="text-center text-sm-left mb-2 mb-sm-0">
+                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Edit Product Details</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content pt-3">
+                    <div class="tab-pane active">
+                      <form class="form" [formGroup]="editproductForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                          <div class="col">
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                    <label>Product Name</label>
+                                    <input class="form-control" type="text" name="product_name" formControlName="product_name"
+                                      [ngClass]="{'is-invalid':submitted && formControl.product_name.errors}">
+                                    <div *ngIf="submitted && formControl.product_name.errors" class="text-danger">
+                                      <div *ngIf="formControl.product_name.errors.required">*Product Name is required.</div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                    <label>Product price</label>
+                                    <input class="form-control" type="text" name="product_price" formControlName="product_price"
+                                      [ngClass]="{'is-invalid':submitted && formControl.product_price.errors}">
+                                    <div *ngIf="submitted && formControl.product_price.errors" class="text-danger">
+                                      <div *ngIf="formControl.product_price.errors.required">* Product price is required.</div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                  <div class="form-group">
+                                      <label>About</label>
+                                      <input class="form-control" type="text" name="about" formControlName="about"
+                                        [ngClass]="{'is-invalid':submitted && formControl.about.errors}">
+                                      <div *ngIf="submitted && formControl.about.errors" class="text-danger">
+                                        <div *ngIf="formControl.about.errors.required">*about product is required</div>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+                          <div class="col d-flex justify-content-end">
+                            <button class="btn btn-success" type="submit">submit</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

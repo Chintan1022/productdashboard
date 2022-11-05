@@ -1,0 +1,30 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home/dashboard"><img
+          src="https://api.freelogodesign.org/assets/thumb/logo/22192360_400.png?t=637873802380000000" alt="logo"
+          width="60px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+        <form class="d-flex col-sm-12 col-md-2 justify-content-end inline">
+          <input type="search" class="form-control me-1" placeholder="Search..." aria-label="Search">
+          <button id="search-button" type="button" class="btn btn-primary">search</button>
+        </form> 
+        <div class="nav justify-content-end" *ngIf="readuser">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#">{{readuser.name}} </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" routerLink="changepassword">change password</a></li>
+              <hr>
+              <li><a class="dropdown-item" (click)="confirmBox()">logout</a></li>
+            </ul>
+          </li>
+         </div>
+      </div>
+    </div>
+  </nav>

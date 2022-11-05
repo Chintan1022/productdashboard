@@ -1,0 +1,33 @@
+<div class="col-md-8 my-4">
+    <h2 class="text-center my-2">Products Details</h2>
+    <div class="container my-3 d-flex justify-content-end">
+        <button class="btn btn-success " routerLink="addproduct">Add Product</button>
+    </div>
+    <table class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>About</th>
+                <th>Action</th>
+                <th></th>
+             </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of allproducts">
+                <td>{{product.id}}</td>
+                <td>{{product.product_name}}</td>
+                <td>{{product.product_price}}</td>
+                <td>{{product.about}}</td>
+                <td>
+                    <button class="btn btn-primary" [routerLink]="['/home/products',product.id]">Edit</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteproduct(product.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
